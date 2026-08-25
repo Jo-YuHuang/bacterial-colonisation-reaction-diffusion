@@ -50,6 +50,29 @@ The script produces three plots:
 
 During execution, the script also reports final coverage and wall-clock runtime for each grid resolution.
 
+## Results
+
+### Solver comparison and baseline spatial result
+
+![Explicit and semi-implicit solver comparison](docs/results/solver-comparison.png)
+
+The grid-resolution study compares final bacterial coverage after 10 simulated hours for explicit and semi-implicit solvers. Coverage approaches a stable value as spatial resolution increases, illustrating the convergence–runtime trade-off. The explicit time-history plot shows increasing bacterial coverage over the simulation period, while the density map shows the expected radial spread from the initial central seed.
+
+### Extended convergence study
+
+![Extended implicit convergence study](docs/results/extended-convergence.png)
+
+The extended implicit-resolution study indicates that coverage approaches a stable value as the node count rises toward one million. The lower-resolution study used a maximum of 160,000 nodes to keep runtime practical; the extended plot illustrates the expected benefit and computational cost of further refinement.
+
+### Parameter-sweep patterns
+
+| Variant A | Variant B |
+| --- | --- |
+| ![Parameter pattern A](docs/results/pattern-variant-a.jpeg) | ![Parameter pattern B](docs/results/pattern-variant-b.jpeg) |
+
+The parameter-sweep visualisations show that changing the reaction–diffusion coefficients can produce more complex spatial patterns than the baseline radial colony. These results are qualitative illustrations of model sensitivity; they are not biological validation against laboratory data.
+
+> **Reproducibility note:** the report documents a development-stage parameter set, while the currently published script should be treated as the authoritative source for the parameter values used in future reruns.
 ## Repository structure
 
     src/
